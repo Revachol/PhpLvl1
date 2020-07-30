@@ -13,28 +13,18 @@
     <title><?php echo $title; ?></title>
 </head>
 <body>
-<!-- Задание 1 -->
-<?php
-$a = 5;
-$b = '05';
-var_dump($a == $b);         // Почему true?    //php имеет слабую типизацию, из-за этого он преобразует перменую а в int и убирает 0 (так как в числе первый ноль не имеет смысла)
-var_dump((int)'012345');     // Почему 12345? //команда (int) преобразует последущую запись в число значит 012345 становиться числом и 0 убирается так как не имеет смысла
-var_dump((float)123.0 === (int)123.0); // Почему false? // === это сравнение по типу данных, в данном случае они имеют разные типы float (дробное число) и int(целое число)
-var_dump((int)0 === (int)'hello, world'); // Почему true? //=== сравнивает типы данных, в данном случае int и int, поэтому true
-?>
-
-<!-------------------------------------------------------------------------------------------------------------------------------------------------->
-<hr>
-
-
 <div id="content">
     <h1><?php echo $h1; ?></h1>
-
-    <ul id="menu">
-        <li><a href="#">home</a></li>
-        <li><a href="#">archive</a></li>
-        <li><a href="#">contact</a></li>
+    <ul id = "menu">
+    <?php
+    $a = "<id = 'menu'>";
+    $list = ["home", "archive", "contact"];
+    foreach($list as $li){
+        echo $li;
+    }
+    ?>
     </ul>
+
 
     <div class="post">
         <div class="details">
@@ -69,14 +59,5 @@ var_dump((int)0 === (int)'hello, world'); // Почему true? //=== сравн
         <p>Copyright &copy; <em>minimalistica</em> &middot; Design: Luka Cvrk, <a href="http://www.solucija.com/" title="Free CSS Templates">Solucija</a></p>
     </div>
 </div>
-<?php
-$a = 1;
-$b = 2;
-$b = $a + $b;
-$a = $b - $a;
-$b = $b - $a;
-echo $a;
-echo $b;
-?>
 </body>
 </html>
